@@ -5,9 +5,10 @@
 
 
   tasks:
-  - name: sudo apt command
+  - name: Update the catche
     apt:
       update_cache: yes
+    become: yes
 
   - name: upgrade all packages
     apt:
