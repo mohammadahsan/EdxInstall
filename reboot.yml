@@ -5,9 +5,6 @@
 
 
   tasks:
-  - name: Updates apt cache
-    action: apt update_cache=true
-
   - name: upgrade all packages
     apt:
       name: "*"
