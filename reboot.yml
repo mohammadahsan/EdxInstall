@@ -13,10 +13,7 @@
       name: "*"
       force_apt_get: True
       state: latest
-
-  - name: reboot the server
-    reboot:
-
+      
   - name: Cloning git repository
     git:
       repo: 'https://github.com/mohammadahsan/edx-ansible.git'
