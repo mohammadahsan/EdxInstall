@@ -26,4 +26,4 @@
     shell: sh /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
 
   - name: Installing EDX Hawthorn Release
-    shell: sh /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
+    shell: sh /etc/edxInstall/native.sh >> native-file.txt
