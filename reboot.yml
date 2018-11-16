@@ -20,10 +20,10 @@
       dest: /etc/edxInstall
 
   - name: Installing Ansible bootstrap
-    shell: sh /etc/edxInstall/ansible-bootstrap.sh >> ansible-bootstrap.txt
+    shell: bash /etc/edxInstall/ansible-bootstrap.sh >> ansible-bootstrap.txt
 
   - name: Generating Passwords
-    shell: sh /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
+    shell: bash /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
 
   - name: Installing EDX Hawthorn Release
-    shell: sh /etc/edxInstall/native.sh >> native-file.txt
+    shell: bash /etc/edxInstall/native.sh >> native-file.txt
