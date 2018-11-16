@@ -1,0 +1,33 @@
+---
+- name: Installing Open Edx Hawthorn Release
+  hosts: all
+  remote_user: root
+
+
+  tasks:
+  - name: sudo apt command
+    apt:
+      update_cache: yes
+
+  - name: upgrade all packages
+    apt:
+      name: "*"
+      force_apt_get: True
+      state: latest
+
+  - name: reboot the server
+    reboot:
+
+  - name: Cloning git repository
+    git:
+      repo: 'https://github.com/mohammadahsan/edx-ansible.git'
+      dest: /etc/edxInstall
+
+  - name: Installing Ansible bootstrap
+    shell: sh /etc/edxInstall/ansible-bootstrap.sh >> ansible-bootstrap.txt
+
+  - name: Generating Passwords
+    shell: sh /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
+
+  - name: Installing EDX Hawthorn Release
+    shell: sh /etc/edxInstall/native.sh >> native.sh.txt
