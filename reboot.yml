@@ -1,12 +1,12 @@
 ---
 - name: Installing Open Edx Hawthorn Release
   hosts: all
-  remote_user: root
 
 
   tasks:
   - name: Updates apt cache
     action: apt update_cache=true
+    become: true
 
   - name: upgrade all packages
     apt:
