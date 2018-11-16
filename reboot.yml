@@ -13,7 +13,7 @@
       name: "*"
       force_apt_get: True
       state: latest
-      
+
   - name: Cloning git repository
     git:
       repo: 'https://github.com/mohammadahsan/edx-ansible.git'
@@ -26,4 +26,4 @@
     shell: sh /etc/edxInstall/generate-passwords.sh >> generate-passwords.txt
 
   - name: Installing EDX Hawthorn Release
-    shell: sh /etc/edxInstall/native.sh >> native.sh.txt
+    shell: sh /etc/edxInstall/native.sh >> native.txt
