@@ -5,10 +5,8 @@
 
 
   tasks:
-  - name: Update the catche
-    apt:
-      update_cache: yes
-    become: yes
+  - name: Updates apt cache
+    action: apt update_cache=true
 
   - name: upgrade all packages
     apt:
